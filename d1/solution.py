@@ -1,9 +1,11 @@
+import os
 from collections import defaultdict
 
-elfs = defaultdict(int)
-elf_number = 1
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+with open(os.path.join(__location__, "input.txt"), "r") as input:
+    elfs = defaultdict(int)
+    elf_number = 1
 
-with open("input.txt", "r") as input:
     for line in input:
         if line != "\n":
             elfs[elf_number] += int(line)
